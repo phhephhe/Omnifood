@@ -29,14 +29,21 @@ Default: 1
 - Tints:
 #fdf2e9
 #fae5d3
+#eb984e
 
-- Shades: #cf711f
+- Shades:
+ #cf711f
+ #45260a
 - Accents: 
 - Greys: 
+#888
+#767676 (lightest grey allowed no #fff)
 #6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
+
 --- 05 SHADOWS
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
 Default: 9px
@@ -77,11 +84,10 @@ body {
   display: grid;
   row-gap: 9.6rem;
   column-gap: 6.4rem;
-
 }
 
 /* grid if is not last child */
-.grid:not(:last-child){
+.grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
 
@@ -94,7 +100,9 @@ body {
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
-
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
 .grid--center-v {
   align-items: center;
 }
@@ -131,6 +139,7 @@ body {
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -139,9 +148,25 @@ body {
   text-decoration: none;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+  /* for btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   transition: all 0.3s;
 }
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
 .btn--full:link,
 .btn--full:visited {
   background-color: #e67e22;
@@ -172,7 +197,7 @@ body {
 }
 
 .link:link:hover,
-.link:visited:hover{
+.link:visited:hover {
   color: #cf711f;
   border-bottom: 1px solid transparent;
 }
@@ -194,7 +219,12 @@ body {
   height: 3rem;
   color: #e67e22;
 }
-
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  box-shadow:  0 0 0 0.8rem #e67e22;
+  border-radius: 9px;
+}
 /* helper/setting classes */
 .margin-right-small {
   margin-right: 1.6rem !important;
