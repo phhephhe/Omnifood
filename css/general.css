@@ -59,6 +59,9 @@ Default: 9px
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+
+  /* doesn't work on Safari */
+  /* scroll-behavior: smooth; */
 }
 * {
   padding: 0;
@@ -71,6 +74,7 @@ body {
   font-weight: 400;
   color: #555;
   overflow-x: hidden;
+
 }
 
 /* *******************************
@@ -225,7 +229,7 @@ body {
 *:focus {
   outline: none;
   /* outline: 4px dotted #e67e22; */
-  box-shadow:  0 0 0 0.8rem #e67e22;
+  box-shadow: 0 0 0 0.8rem #e67e22;
   border-radius: 9px;
 }
 /* helper/setting classes */
